@@ -36,4 +36,4 @@ $ git clone XXX ~/SniperGit
 ````
 Create your own repository for your backup by either creating it yourself or using the `BackupTemplate`-folder from the __SniperGit__-repository
 
-__BE CAREFUL!__ the `TEMPFOLDER` (specified in `SniperGit.conf`) will frequently be cleanded. Thats why this folder should __NOT__ be your local repository folder, but a additional folder __INSIDE__ of this repository
+__BE CAREFUL!__ the `TEMPFOLDER` (specified in `SniperGit.conf`) will frequently be completely cleaned. Thats why this folder should __NOT BE EXACLTY__ your local repository folder, but __AN ADDITIONAL FOLDER INSIDE__.
