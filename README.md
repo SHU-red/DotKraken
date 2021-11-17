@@ -10,9 +10,22 @@ Lets you easily and as exact as a sniper pick specific files from the whole syst
    2. Copy all files/folders for backup (specified in `SniperGit.conf`) 
 
 ## Pro/Con
+
 Pro:
 * Collecting also system-files without the need of root permissions
 * Collecting also system-files without the need of being somewhere in $HOME-directory
+* No need for symlinks or cleaning broken symlinks
+* No risk of breaking your system through manipulation of files by replacing them with symlinks
+
 Con:
-* All files will be available as copy which needs space to store
-* Possibility to 
+* All files will be available as copy which needs space to store (not much if only text files)
+* Possibility to edit files like symlinks behave (but you just have to edit the files where they would actually belong)
+
+## Why use it
+This script has been created to have a very simple way to freely backup files and directories as picked throughout the whole system, no matter if it is a root, or a user file/directory and what the permissions are.
+
+Thats why it is super easy to also use on e.g. RaspberryPies with custom distributions, storing important files not in $HOME directory.
+
+Its super simple to create e.g. daily-backups by setting a crontab, executing `$ SniperGit.sh CONFIGFILE` from your machine or RaspberryPies.
+
+## How to get it working
