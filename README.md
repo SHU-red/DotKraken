@@ -7,7 +7,8 @@ Lets you easily and as exact as a sniper pick specific files from the whole syst
     * This gives the opportunity to run backups with different configurations on one machine by just creating differnt config-files and running/executing them through `SniperGit.sh`
 2. __SniperGit__ will now
    1. Creat and/or fully clean the specified `temp-folder` (specified in `SniperGit.conf`), placed in the local git-repository for your backups
-   2. Copy all files/folders for backup (specified in `SniperGit.conf`) 
+   2. Copy all files/folders for backup (specified in `SniperGit.conf`) into the `TEMPFOLDER`(specified in `SniperGit.conf`)
+3. You can now backup all of those files, because the `TEMPFOLDER`is placed in your local Git repository for backing up your files
 
 ## 💣 Pro/Con
 
