@@ -26,6 +26,29 @@ prnt_line(){
     ERROR=$RED
     DEFAULT=$NORMAL
     QUESTION=$PURPLE
+    HEADING=$ORANGE
+    ABORT=$YELLOW
+
+    # If normal message
+    if [[ "$1" == "DEFAULT" ]]; then
+
+        # Set Output String
+        PRNT_OUT="$2"
+
+        # If defautl text has to be printed
+    elif [[ "$1" == "HEADING" ]]; then
+
+        # Print
+        PRNT_OUT="███   $2   ███"
+
+    elif [[ "$1" == "ERROR" || "$1" == "ABORT" ]]; then
+
+        PRNT_OUT="[ $1 ] $2"
+
+    else
+        # Print message without type in front
+        PRNT_OUT="$2"
+    fi
 
     # Preparing the color
     color=\$${1:-NORMAL}
@@ -33,18 +56,19 @@ prnt_line(){
     # Setting the color
     echo -ne "$(eval echo ${color})"
 
-    # If non-default text has to be printed
-    if !(( "$1" == "DEFAULT" ));
-    then
-        # Print message with type in front
-        echo "[ $1 >>> $2"
-        # If defautl text has to be printed
-    else
-        # Print message without type in front
-        echo "$2"
+    # Print message to console
+    echo "$PRNT_OUT"
+
+    # Reset color to normal
+    echo -ne "${NORMAL}"
+
+    # If logging is activated
+    if [[ $LOG == true ]]; then
+
+        # Put to logfile
+        echo "$PRNT_OUT" >> $LOG_PATH
+
     fi
 
-
-# Reset color to normal
-echo -ne "${NORMAL}"
 }
+
