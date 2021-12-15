@@ -63,7 +63,7 @@ prnt_line DEFAULT "default.config"
 echo""
 
 # Load custom configuration
-prnt_line HEADING "Loading cutom config"
+prnt_line HEADING "Loading custom config"
 source $CONF_PATH
 prnt_line DEFAULT "$CONF_PATH"
 echo ""
@@ -110,7 +110,7 @@ done
 # Prompt files
 echo ""
 prnt_line QUESTION "Listed files are correct? [y/n]"
-read
+prmpt_read
 prmpt_yes
 echo ""
 
@@ -135,6 +135,7 @@ fi
 # Create Backup directory
 mkdir -p $BUP_PATH
 prnt_line DEFAULT "Target directory has been created"
+echo ""
 
 # Copying files
 prnt_line HEADING "Backup"
@@ -151,3 +152,7 @@ for i in "${!BUP_FILES[@]}" ; do
     prnt_line DEFAULT "copied ${BUP_FILES[$i]}"
 
 done
+
+
+
+#date +"%d-%m-%Y %H:%M:%S"
