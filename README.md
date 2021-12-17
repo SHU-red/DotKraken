@@ -19,7 +19,6 @@ I found all available tools for the topic "Backing up DotFiles"
 - using/requiring the DotFiles to be linked via symlinks
 - are not able to backup system files outside of the users home-folder
 
-You can now backup all of those files, because the `TEMPFOLDER`is placed in your local Git repository for backing up your files
 ## 👷‍♂️ How to get DotKraken working
 
 ### Clone repository to your favourite destination
