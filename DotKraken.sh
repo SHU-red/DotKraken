@@ -112,7 +112,7 @@ done
 
 # Output message
 echo ""
-prnt_line HEADING "2nd Step: Deleted files (full path)"
+prnt_line HEADING "2nd Step: Files will be deleted from Backup Directory (full path)"
 
 # Iterate through all files
 for i in "${!DEL_FILES[@]}" ; do
@@ -124,7 +124,7 @@ for i in "${!DEL_FILES[@]}" ; do
     DEL_FILES[$i]=$REALPATH
 
     # Output
-    prnt_line DEFAULT $REALPATH
+    prnt_line DEFAULT $BUP_PATH$REALPATH
 
 done
 
@@ -161,7 +161,6 @@ echo ""
 # Copying files
 prnt_line HEADING "Backup"
 
-
 # Iterate through all files
 for i in "${!BUP_FILES[@]}" ; do
 
@@ -180,7 +179,6 @@ echo ""
 # Deleting files
 prnt_line HEADING "Delete"
 
-
 # Iterate through all files
 for i in "${!DEL_FILES[@]}" ; do
 
@@ -193,22 +191,16 @@ for i in "${!DEL_FILES[@]}" ; do
 done
 echo ""
 
-
 # Backup done
 prnt_line HEADING "Backup done!"
-
 
 # Prompt GitPush
 echo ""
 prnt_line QUESTION "Shall backup immediately be pushed to GitHub? [y/n]"
 git_read
 prmpt_yes
-
-
-
 git_push
 echo ""
-
 
 # GitHub Push done
 prnt_line HEADING "GitHub Push done"

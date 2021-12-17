@@ -29,6 +29,9 @@ git_push(){
     # Show new path
     prnt_line DEFAULT "Changed working directory to: $PWD"
 
+    # Git Status
+    git status
+
     # Add all files
     git add .
 
@@ -38,7 +41,7 @@ git_push(){
     # Show Commit comment
     prnt_line DEFAULT "GitCommit Comment: $GITCOM"
 
-    git commit -a -m $GITCOM
+    git commit -a -m "$GITCOM"
 
     # Push all changes
     git push
