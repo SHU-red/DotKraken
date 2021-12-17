@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Function to print lines in different colors
 prnt_line(){
 
@@ -71,4 +72,3 @@ prnt_line(){
     fi
 
 }
-

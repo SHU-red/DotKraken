@@ -1,14 +1,17 @@
 #!/bin/bash
 
 # Change working directory to direcory of this script
-GSHLT_DIR=$(dirname "$(readlink -f "$0")")
-cd $GSHLT_DIR
+DKRK_DIR=$(dirname "$(readlink -f "$0")")
+cd $DKRK_DIR
 
 # Source print script
 source bin/prnt.sh
 
 # Source prompt scripts
 source bin/prmpt.sh
+
+# Source git functions
+source bin/git.sh
 
 # Show header
 echo""
@@ -85,13 +88,13 @@ done
 echo ""
 # Prompt parameters
 prnt_line QUESTION "Proceed with this config? [y/n]"
-read
+prmpt_read
 prmpt_yes
 
 
 # Output message
 echo ""
-prnt_line HEADING "Creating full pahts to backup files"
+prnt_line HEADING "1st Step: Backup files (full path)"
 
 # Iterate through all files
 for i in "${!BUP_FILES[@]}" ; do
@@ -101,6 +104,24 @@ for i in "${!BUP_FILES[@]}" ; do
 
     # Store realpath
     BUP_FILES[$i]=$REALPATH
+
+    # Output
+    prnt_line DEFAULT $REALPATH
+
+done
+
+# Output message
+echo ""
+prnt_line HEADING "2nd Step: Deleted files (full path)"
+
+# Iterate through all files
+for i in "${!DEL_FILES[@]}" ; do
+
+    # Get realpath
+    REALPATH=$(eval "realpath ${DEL_FILES[$i]}")
+
+    # Store realpath
+    DEL_FILES[$i]=$REALPATH
 
     # Output
     prnt_line DEFAULT $REALPATH
@@ -127,7 +148,7 @@ else
 
     # Output that directory will be cleared
     prnt_line DEFAULT "Target directory exists"
-    rm -r $BUP_PATH
+    rm -f -r $BUP_PATH
     prnt_line DEFAULT "Target directory has been erased"
 
 fi
@@ -152,7 +173,39 @@ for i in "${!BUP_FILES[@]}" ; do
     prnt_line DEFAULT "copied ${BUP_FILES[$i]}"
 
 done
+echo ""
+
+# Deleting files
+prnt_line HEADING "Delete"
 
 
+# Iterate through all files
+for i in "${!DEL_FILES[@]}" ; do
 
-#date +"%d-%m-%Y %H:%M:%S"
+    # Copy file
+    rm -f -r ${DEL_FILES[$i]} $BUP_PATH${DEL_FILES[$i]}
+
+    # Output
+    prnt_line DEFAULT "deleted ${DEL_FILES[$i]}"
+
+done
+echo ""
+
+
+# Backup done
+prnt_line HEADING "Backup done!"
+
+
+# Prompt GitPush
+echo ""
+prnt_line QUESTION "Shall backup immediately be pushed to GitHub? [y/n]"
+git_read
+prmpt_yes
+git_push
+echo ""
+
+
+# GitHub Push done
+prnt_line HEADING "GitHub Push done"
+
+read
