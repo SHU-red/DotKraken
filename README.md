@@ -39,7 +39,7 @@ $ git clone https://github.com/YOU/DotKraken_Backup.git ~
 ````
 $ cp -i ~/DotKraken/default.conf ~/DotKraken_Backup/DotKraken.conf
 ````
-### Modify your new config file as you like
+### Modify your new DotKraken.conf config file as you like
 - Add Files to backup
 - Add Files to not-backup (which will only be deleted within the backup folder)
 - Activate Prompts
