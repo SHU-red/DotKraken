@@ -171,6 +171,8 @@ for i in "${!BUP_FILES[@]}" ; do
 
     # Output
     prnt_line DEFAULT "copied ${BUP_FILES[$i]}"
+    prnt_line DEFAULT "to $BUP_PATH${BUP_FILES[$i]}"
+    echo ""
 
 done
 echo ""
@@ -182,11 +184,11 @@ prnt_line HEADING "Delete"
 # Iterate through all files
 for i in "${!DEL_FILES[@]}" ; do
 
-    # Copy file
-    rm -f -r ${DEL_FILES[$i]} $BUP_PATH${DEL_FILES[$i]}
+    # Delete file
+    rm -f -r $BUP_PATH${DEL_FILES[$i]}
 
     # Output
-    prnt_line DEFAULT "deleted ${DEL_FILES[$i]}"
+    prnt_line DEFAULT "deleted $BUP_PATH${DEL_FILES[$i]}"
 
 done
 echo ""
@@ -201,6 +203,9 @@ echo ""
 prnt_line QUESTION "Shall backup immediately be pushed to GitHub? [y/n]"
 git_read
 prmpt_yes
+
+
+
 git_push
 echo ""
 
