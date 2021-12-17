@@ -10,6 +10,7 @@ Dot Kraken basically works in three steps
 1. Copy all defined files/folders into a backup directory named `root`, right next to the DotKraken-config-file
 2. Delete all defined files/folders which are defined in DotKraken-config-file (This is like a cherry-picking step to give you the possibility to delete sensible content from backed up folders)
 3. Push to GitHub
+
 Backup is done!
 
 ## ☝️ Why was it designed this way
