@@ -1,4 +1,3 @@
-#!/bin/bash
 
 # Function to print lines in different colors
 git_read(){
