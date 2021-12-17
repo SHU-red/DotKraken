@@ -23,11 +23,17 @@ fi
 # Pushing changes to GitHub
 git_push(){
 
+    echo ""
+    prnt_line HEADING "GitHub: Preparing Push"
+
     # Change to backup directory
     cd $CONF_DIR
 
     # Show new path
     prnt_line DEFAULT "Changed working directory to: $PWD"
+
+    echo ""
+    prnt_line HEADING "GitHub: Status"
 
     # Git Status
     git status
@@ -37,6 +43,9 @@ git_push(){
 
     # Commit all files and changes
     GITCOM="AutoBackup $(date +"%d-%m-%Y %H:%M:%S")"
+
+    echo ""
+    prnt_line HEADING "GitHub: Commit and Push"
 
     # Show Commit comment
     prnt_line DEFAULT "GitCommit Comment: $GITCOM"
@@ -48,5 +57,10 @@ git_push(){
 
     # Change directory back to DotKraken
     cd $DKRK_DIR
+
+    echo ""
+    prnt_line HEADING "GitHub: Push done"
+    # Show new path
+    prnt_line DEFAULT "Restored working directory: $PWD"
 
 }

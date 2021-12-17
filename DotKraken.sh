@@ -192,7 +192,8 @@ done
 echo ""
 
 # Backup done
-prnt_line HEADING "Backup done!"
+prnt_line HEADING "Backup files prepared!"
+prnt_line DEFAULT "in $BUP_PATH"
 
 # Prompt GitPush
 echo ""
@@ -201,8 +202,3 @@ git_read
 prmpt_yes
 git_push
 echo ""
-
-# GitHub Push done
-prnt_line HEADING "GitHub Push done"
-
-read
