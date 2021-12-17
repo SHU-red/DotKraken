@@ -43,6 +43,13 @@ Just execute DotKraken.sh and as parameter provide the destination to your confi
 ````
 $ bash ~/DotKraken/DotKraken.sh ~/DotKraken_Backup/DotKraken.conf
 ````
+### Automatic Backup
+To frequently auto-backup your important files, just open `crontab -e` and add a linke like
+```
+# DotKraken Backup daily
+0 0 * * * ~/DotKraken/DotKraken.sh ~/DotKraken_Backup/DotKraken.conf
+```
+This will cause a daily push of changes
 ### 🤯 Thats it
 - Your backup will be placed in the folder ~/DotKraken_Backup/root
 - This root-folder will be erased and re-created at each and every backup to provide the clean up-to-date status of your system-files
