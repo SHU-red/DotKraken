@@ -17,13 +17,6 @@ I found all available tools for the topic "Backing up DotFiles"
 - using/requiring the DotFiles to be linked via symlinks
 - are not able to backup system files outside of the users home-folder
 
-5. Execute `$ DotKraken.sh CONFIGFILE` whereas `CONFIGFILE`has to be replaced by the __DotKraken__ file, specifying the backup
-    * Example: `$ DotKraken.sh ~/UserBackup1/DotKraken.conf`
-    * This gives the opportunity to run backups with different configurations on one machine by just creating differnt config-files and running/executing them through `DotKraken.sh`
-6. __DotKraken__ will now
-   1. Creat and/or fully clean the specified `temp-folder` (specified in `DotKraken.conf`), placed in the local git-repository for your backups
-   2. Copy all files/folders for backup (specified in `DotKraken.conf`) into the `TEMPFOLDER`(specified in `DotKraken.conf`)
-
 You can now backup all of those files, because the `TEMPFOLDER`is placed in your local Git repository for backing up your files
 ## 👷‍♂️ How to get DotKraken working
 
