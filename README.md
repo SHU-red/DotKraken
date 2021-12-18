@@ -1,5 +1,5 @@
 # 🦑 DotKraken
-Lets you easily backup files and folders throughout the whole system (and not only from the users home-folder)
+Lets you easily backup files and folders throughout the whole system (and not only from the users home-folder) without root permissions
 
 ## ❗ Preamble
 Im a very fresh Linux user which means that my coding skills and understanding of the whole system itsself has limits.
