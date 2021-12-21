@@ -1,21 +1,5 @@
 #!/bin/bash
 
-# Change working directory to direcory of this script
-DKRK_DIR=$(dirname "$(readlink -f "$0")")
-cd $DKRK_DIR
-
-# Change user permissions to make DotKraken available for crontabs
-chmod ugo+x DotKraken.sh
-
-# Source print script
-source bin/prnt.sh
-
-# Source prompt scripts
-source bin/prmpt.sh
-
-# Source git functions
-source bin/git.sh
-
 # Show header
 echo""
 prnt_line HEADING "▀██▀▀█▄             ▄   ▀██▀  █▀                  ▀██                       "
@@ -26,6 +10,23 @@ prnt_line HEADING "▄██▄▄▄█▀   ▀█▄▄█▀  ▀█▄▀ �
 prnt_line DEFAULT "Checking given parameters ..."
 echo""
 
+# Change working directory to direcory of this script
+DKRK_DIR=$(dirname "$(readlink -f "$0")")
+cd $DKRK_DIR
+
+# Change user permissions to make DotKraken available for crontabs
+prnt_line HEADING "Setting permissions for DotKraken.sh to chmmod ugo+x"
+chmod ugo+x DotKraken.sh
+echo""
+
+# Source print script
+source bin/prnt.sh
+
+# Source prompt scripts
+source bin/prmpt.sh
+
+# Source git functions
+source bin/git.sh
 
 # If no parameters are provided is provided
 if (( $# == 0 )); then
@@ -36,7 +37,6 @@ if (( $# == 0 )); then
     exit 1
 
 fi
-
 
 # Check if parameter points to existing file
 if ! [[ -f $1 ]]; then
