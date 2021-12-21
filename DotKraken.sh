@@ -4,6 +4,9 @@
 DKRK_DIR=$(dirname "$(readlink -f "$0")")
 cd $DKRK_DIR
 
+# Change user permissions to make DotKraken available for crontabs
+chmod ugo+x DotKraken.sh
+
 # Source print script
 source bin/prnt.sh
 
