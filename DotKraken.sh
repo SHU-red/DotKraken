@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Source print script
+source bin/prnt.sh
+
+# Source prompt scripts
+source bin/prmpt.sh
+
+# Source git functions
+source bin/git.sh
+
 # Show header
 echo""
 prnt_line HEADING "▀██▀▀█▄             ▄   ▀██▀  █▀                  ▀██                       "
@@ -18,15 +27,6 @@ cd $DKRK_DIR
 prnt_line HEADING "Setting permissions for DotKraken.sh to chmmod ugo+x"
 chmod ugo+x DotKraken.sh
 echo""
-
-# Source print script
-source bin/prnt.sh
-
-# Source prompt scripts
-source bin/prmpt.sh
-
-# Source git functions
-source bin/git.sh
 
 # If no parameters are provided is provided
 if (( $# == 0 )); then
