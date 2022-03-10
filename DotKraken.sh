@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Change working directory to direcory of this script
+DKRK_DIR=$(dirname "$(readlink -f "$0")")
+cd $DKRK_DIR
+
 # Source print script
 source bin/prnt.sh
 
@@ -18,10 +22,6 @@ prnt_line HEADING " ██    ██ ██   ██  ██    ██  ██  
 prnt_line HEADING "▄██▄▄▄█▀   ▀█▄▄█▀  ▀█▄▀ ▄██▄  ██▄ ▄██▄    ▀█▄▄▀█▀ ▄██▄ ██▄  ▀█▄▄▄▀ ▄██▄ ██▄ "
 prnt_line DEFAULT "Checking given parameters ..."
 echo""
-
-# Change working directory to direcory of this script
-DKRK_DIR=$(dirname "$(readlink -f "$0")")
-cd $DKRK_DIR
 
 # Change user permissions to make DotKraken available for crontabs
 prnt_line HEADING "Setting permissions for DotKraken.sh to chmmod ugo+x"
