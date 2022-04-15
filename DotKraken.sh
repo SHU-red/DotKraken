@@ -85,7 +85,7 @@ echo""
 # Show file definition
 prnt_line DEFAULT "Defined Backup Files:"
 for i in ${!BUP_FILES[@]}; do
-prnt_line DEFAULT "$i: ${BUP_FILES[$i]}"
+    prnt_line DEFAULT "$i: ${BUP_FILES[$i]}"
 done
 
 echo ""
